@@ -1,0 +1,88 @@
+.buttonCameraOn {
+  /* Basic Layout and Spacing */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px; /* Space between icon and text */
+  padding: 8px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  /* Typography */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  font-weight:600;
+  
+
+  /* The "Stop" Theme (Red) */
+  background-color:transparent; /* A standard, noticeable red */
+  color: rgb(181, 64, 64); /* White text for contrast */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Hover Effect for Interactivity */
+.buttonCameraOn:hover {
+  background-color: #71373d; /* Slightly darker red on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px); /* Slight lift */
+}
+
+/* Active/Clicked State */
+.buttonCameraOn:active {
+  background-color: #703f44; /* Even darker red when pressed */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transform: translateY(0); /* Return to original position */
+}
+
+/* Focus State for Accessibility (Crucial!) */
+.buttonCameraOn:focus-visible {
+  outline: 3px solid #ffc107; /* Bright outline for keyboard users */
+  outline-offset: 2px;
+}
+
+.button {
+  /* Basic Layout and Spacing */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px; /* Space between icon and text */
+  padding: 8px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  /* Typography */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  font-weight:600;
+  
+
+  /* The "Stop" Theme (Red) */
+  background-color:transparent; /* A standard, noticeable red */
+  color: rgb(245, 244, 244); /* White text for contrast */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Hover Effect for Interactivity */
+.button:hover {
+  background-color: #71373d; /* Slightly darker red on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px); /* Slight lift */
+}
+
+/* Active/Clicked State */
+.button:active {
+  background-color: #703f44; /* Even darker red when pressed */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transform: translateY(0); /* Return to original position */
+}
+
+/* Focus State for Accessibility (Crucial!) */
+.button:focus-visible {
+  outline: 3px solid #ffc107; /* Bright outline for keyboard users */
+  outline-offset: 2px;
+}
+

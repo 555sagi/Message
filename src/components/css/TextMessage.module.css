@@ -1,0 +1,22 @@
+path {
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 0.1;
+  stroke-dasharray: 90;
+  stroke-dashoffset: 90;
+  animation: TextAnimation 4s ease-in-out 1 forwards;
+}
+
+@keyframes TextAnimation {
+  0% {
+    stroke-dashoffset: 90;
+  }
+40%{
+    fill:transparent;
+}
+
+  100% {
+    fill:#fff;
+    stroke-dashoffset: 0;
+  }
+}
