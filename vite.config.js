@@ -10,11 +10,5 @@ export default defineConfig({
     }),
     react(),
   ],
-<<<<<<< HEAD
-  server: {
-    allowedHosts: ["gopher-steady-strangely.ngrok-free.app"],
-  },
-=======
   base:'/',
->>>>>>> 8cc742c (updated-messagge)
 });
