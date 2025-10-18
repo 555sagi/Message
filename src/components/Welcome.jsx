@@ -4,11 +4,11 @@ import { useNavigate } from "react-router-dom";
 const Welcome = () => {
   const navigate = useNavigate();
   const [visibleCount, setVisibleCount] = useState(0);
+  const [canContinue, setCanContinue] = useState(false);
 
   const lines = [
-    "This message is intended to be experienced by one person at a time.",
+    "This message is meant for only one girl, please let her read it first.",
     "Please make sure only one face is visible in front of the camera.",
-    
   ];
 
   useEffect(() => {
@@ -17,16 +17,16 @@ const Welcome = () => {
       setVisibleCount((prev) => {
         if (prev < lines.length) return prev + 1;
         clearInterval(interval);
+        setCanContinue(true); // ✅ Enable button only when all lines shown
         return prev;
       });
       index++;
-    }, 1800); // Delay between lines
-
-    return () => clearInterval(interval); // Cleanup on unmount
+    }, 1500); // slightly faster transition
+    return () => clearInterval(interval);
   }, []);
 
   const handleNavigate = () => {
-    navigate("/headcounter");
+    if (canContinue) navigate("/headcounter");
   };
 
   return (
@@ -56,8 +56,8 @@ const Welcome = () => {
               fontSize: "1.3rem",
               lineHeight: "1.8rem",
               opacity: 0,
-              animation: "fadeIn 1.5s forwards",
-              animationDelay: `${index * 0.3}s`,
+              animation: "fadeIn 1s forwards",
+              animationDelay: `${index * 0.2}s`,
               marginBottom: "1rem",
             }}
           >
@@ -68,26 +68,33 @@ const Welcome = () => {
 
       <button
         onClick={handleNavigate}
+        disabled={!canContinue} // 🔒 Button disabled until ready
         style={{
           marginTop: "40px",
           padding: "14px 35px",
           fontSize: "1.1rem",
           fontWeight: "600",
           color: "#fff",
-          backgroundColor: "#007bff",
+          backgroundColor: canContinue ? "#007bff" : "#a0a0a0",
           border: "none",
           borderRadius: "8px",
-          cursor: "pointer",
-          boxShadow: "0 5px 20px rgba(0, 123, 255, 0.3)",
-          transition: "background-color 0.3s ease, transform 0.2s ease",
+          cursor: canContinue ? "pointer" : "not-allowed",
+          boxShadow: canContinue
+            ? "0 5px 20px rgba(0, 123, 255, 0.3)"
+            : "none",
+          transition: "all 0.3s ease",
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.backgroundColor = "#0056b3";
-          e.currentTarget.style.transform = "translateY(-2px)";
+          if (canContinue) {
+            e.currentTarget.style.backgroundColor = "#0056b3";
+            e.currentTarget.style.transform = "translateY(-2px)";
+          }
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.backgroundColor = "#007bff";
-          e.currentTarget.style.transform = "translateY(0)";
+          if (canContinue) {
+            e.currentTarget.style.backgroundColor = "#007bff";
+            e.currentTarget.style.transform = "translateY(0)";
+          }
         }}
       >
         Continue......
