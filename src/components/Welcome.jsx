@@ -9,7 +9,7 @@ const Welcome = () => {
   const lines = [
     "This message is meant for only one girl, please let her read it first.",
     "Please make sure only one face is visible in front of the camera.",
-	"Better to use desktop Version 'not a mandatory'
+	"Better to use desktop Version 'not a mandatory'",
   ];
 
   useEffect(() => {
