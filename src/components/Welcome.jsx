@@ -7,9 +7,8 @@ const Welcome = () => {
   const [canContinue, setCanContinue] = useState(false);
 
   const lines = [
-    "This message is meant for only one girl, please let her read it first.",
-    "Please make sure only one face is visible in front of the camera.",
-	"Better to use desktop Version 'not a mandatory'",
+     'మీరు మళ్ళీ ఇది చదువుతున్నారు అంటే మీకు ఏమన్న నాకు మెసేజ్ చేయాలి అనుకుంటే  ఈ iink open చెయ్యండి మీ మెసేజ్ నా దగ్గరకు చేరుతుంది' , 
+'https://chat-application-seven-beige.vercel.app/' 
   ];
 
   useEffect(() => {
